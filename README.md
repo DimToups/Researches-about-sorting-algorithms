@@ -53,6 +53,7 @@
 - [ ] Les codes sont propres et commentés, et en lien direct depuis le rendu.
 - [ ] Les codes sont systématiquement testés et les résultats des tests sont consultables.
 - [ ] Les commandes pour reproduire toutes les expérimentations sont indiquées dans le code et le rendu.
+- [ ] La commande pour compiler tous les codes est un make unique.
 - [ ] Les données des expérimentations sont en lien depuis le rendu.
 - [ ] Un script unique permet de reproduire toutes les expérimentations ; il est indiqué dans le rendu.
 

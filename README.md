@@ -69,7 +69,7 @@
 - [ ] Les graphiques ne comportent aucun artefact sans justification.
 - [ ] Les axes et unités sont bien renseignés.
 - [ ] Les légendes sont pertinentes. 
-
+- [ ] Les échelles permettent de comparer aisément les séries.
 
 ## Rendu 
 

@@ -19,7 +19,7 @@
 - [ ] Un tri par insertion en C est codé et fonctionnel.
 - [ ] Un tri par insertion en C# ou Java est codé et fonctionnel.
 - [ ] Un tri par insertion en python est codé et fonctionnel.
-- [ ] Les temps d'exécution des trois tris par insertion sont comparées dans un graphique.
+- [ ] Les temps d'exécution des trois tris par insertion sont comparés dans un graphique.
 - [ ] Les consommations mémoire des trois tris par insertion sont comparées dans un graphique.
 - [ ] L'analyse est pertinente.
 
@@ -28,7 +28,7 @@
 - [ ] Un tri rapide est codé et fonctionnel.
 - [ ] Un tri par fusion est codé et fonctionnel.
 - [ ] Un tri standard du langage ou de ses libraires est utilisé et fonctionnel.
-- [ ] Les temps d'exécution sont comparées dans un ou plusieurs graphiques.
+- [ ] Les temps d'exécution sont comparés dans un ou plusieurs graphiques.
 - [ ] Les consommations mémoire sont comparées dans un ou plusieurs graphique.
 - [ ] L'analyse est pertinente.
 
@@ -41,13 +41,21 @@
 - [ ] Les résultats de l'expérimentation sont présentés.
 - [ ] L'analyse est pertinente. 
 
-### Evaluation des performances.
+### Evaluation des performances
 
-- [ ] Les espaces d'exploration sont indiqués dans le rendu.
-- [ ] Les espaces d'exploration ne sont pas trop petits : tous les phénomènes et épi-phénomènes sont visibles.
-- [ ] Les espaces d'exploration ne sont pas trop grands : il n'y a pas d'expériences superflues.
+- [ ] La plateforme expérimentale est décrite dans le rendu.
+- [ ] Les paramètres expérimentaux sont indiqués dans le rendu.
+- [ ] Les paramètres expérimentaux ne sont pas trop petits : tous les phénomènes et épi-phénomènes sont visibles.
+- [ ] Les paramètres expérimentaux ne sont pas trop grands : il n'y a pas d'expériences superflues.
 - [ ] Les performances sont analysées en regard de la théorie. 
 - [ ] Les performances sont analysées face à plusieurs tests différents. 
+
+### Limites et pespectives
+
+- [ ] Les limites de l'étude sont données dans le rendu. 
+- [ ] Ces limites sont pertinentes.
+- [ ] Des perspectives sont données dans le rendu.
+- [ ] Ces perspectives sont pertinentes et en rapport avec les limites.
 
 ### Reproductibilité
 - [ ] Les codes sont propres et commentés, et en lien direct depuis le rendu.

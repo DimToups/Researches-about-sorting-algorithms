@@ -48,7 +48,8 @@
 - [ ] Les paramètres expérimentaux ne sont pas trop petits : tous les phénomènes et épi-phénomènes sont visibles.
 - [ ] Les paramètres expérimentaux ne sont pas trop grands : il n'y a pas d'expériences superflues.
 - [ ] Les performances sont analysées en regard de la théorie. 
-- [ ] Les performances sont analysées face à plusieurs tests différents. 
+- [ ] Les performances sont analysées face à plusieurs tests différents.
+- [ ] Les performances sont analysées en regard de la consommation énergétique.
 
 ### Limites et pespectives
 
@@ -58,6 +59,7 @@
 - [ ] Ces perspectives sont pertinentes et en rapport avec les limites.
 
 ### Reproductibilité
+
 - [ ] Les codes sont propres et commentés, et en lien direct depuis le rendu.
 - [ ] Les codes sont systématiquement testés et les résultats des tests sont consultables.
 - [ ] Les commandes pour reproduire toutes les expérimentations sont indiquées dans le code et le rendu.
@@ -66,6 +68,7 @@
 - [ ] Un script unique permet de reproduire toutes les expérimentations ; il est indiqué dans le rendu.
 
 ### Qualité des représentations graphiques
+
 - [ ] Les graphiques ne comportent aucun artefact sans justification.
 - [ ] Les axes et unités sont bien renseignés.
 - [ ] Les légendes sont pertinentes. 

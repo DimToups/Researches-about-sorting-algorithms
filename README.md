@@ -1,10 +1,21 @@
 # P41 : Performances et optimisation
 
-## Objectifs 
+## Objectifs pédagogiques
 
   - Comprendre la complexité algorithmique. 
   - Savoir mesurer des performances applicatives en boite noire.
   - Savoir analyser des performances applicatives en regard de complexités théoriques. 
+
+## Objectifs de réalisation
+
+1. Comparer les performances applicatives 
+
+  - temps d'exécution et consommation mémoire
+  - de trois tris différents
+  - dans trois langages différents
+  - sur des données complètement aléatoires
+
+2. Explorer une hypothèse
 
 
 ## Evaluation

@@ -87,4 +87,63 @@
 
 ## Rendu 
 
-TODO
+### Générateur de données
+
+Lien vers le code : 
+
+Utilisation :
+```
+Executable paramètres
+```
+
+### Comparaison des tris et langages
+
+Choix des tris : 
+
+  -
+  - 
+  -
+
+Choix des langages :
+
+  - Compilé (par défaut C) :
+  - Compilé/interprêté  (par défaut C# ou Java) :
+  - Interprété (par défaut Python) :
+
+#### Description du protocole expérimental
+
+  - Nombre d'expériences par tri/langage : 
+  - Plage des paramètres : 
+  - Méthode de fixation des paramètres :
+  - Description de la machin de test :
+
+```
+Description de la machine de test
+```
+
+#### Résultats
+
+`Unique graphique`
+
+Analyse du graphique
+
+### Hypothèse
+
+Choisir une hypothèse dans la liste suivante et l'expérimenter, ou bien concevoir sa propre hypothèse et la faire valider par son enseignant. Supprimer du README les hypothèses non fouillées.
+Le nombre d'étoiles indique la difficulté.
+
+_Attention_ : certaines hypothèses peuvent être fausses.
+
+- Le choix du pivot influence les performances du tri rapide (*)
+- C est plus rapide que Java (*)
+- La nature des données à trier influence les performances des tris (**)
+- Les options du compilateur influencent les performances (**).
+- Le tri rapide est plus complexe mais plus rapide que le tri fusion (**)
+- Détecter la nature des données permet de gagner en temps d'exécution (***)
+- Python est ralenti par l'absence de typage (***)
+
+#### Description du protocole expérimental 
+
+#### Résultats
+
+### Conclusion générale

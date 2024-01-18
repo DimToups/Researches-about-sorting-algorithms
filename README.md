@@ -123,9 +123,20 @@ Description de la machine de test
 
 #### Résultats
 
-`Unique graphique`
+##### Temps d'exécution 
+
+`Unique graphique temps d'exécution`
 
 Analyse du graphique
+
+##### Consommation mémoire
+
+`Unique graphique mémoire`
+
+Analyse du graphique
+
+#### Conclusion de la comparaison des tris et langages
+
 
 ### Hypothèse
 

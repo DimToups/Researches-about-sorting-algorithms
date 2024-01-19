@@ -22,78 +22,63 @@
 
 ### Générateur de données de test.
 
-- [ ] Génère un fichier binaire d'entiers aléatoires selon une taille donnée en entrée.
-- [ ] Permet de générer au moins trois types de tests différents.
+- [ ] Génère un fichier d'entiers aléatoires selon une taille donnée en entrée.
 
-### Tris par insertion.
+### Comparaison des tris et langages
 
-- [ ] Un tri par insertion en C est codé et fonctionnel.
-- [ ] Un tri par insertion en C# ou Java est codé et fonctionnel.
-- [ ] Un tri par insertion en python est codé et fonctionnel.
-- [ ] Les temps d'exécution des trois tris par insertion sont comparés dans un graphique.
-- [ ] Les consommations mémoire des trois tris par insertion sont comparées dans un graphique.
-- [ ] L'analyse est pertinente.
+- [ ] Au moins trois tris dans trois langages sont codés et fonctionnels.
+- [ ] Au moins deux tris dans deux langages sont codés et fonctionnels.
+- [ ] Au moins un tri dans un langage est codés et fonctionnel.
 
-### Comparaison de différents tris dans un seul langage (au choix)
+### Description du protocole expérimental de la comparaison des tris
 
-- [ ] Un tri rapide est codé et fonctionnel.
-- [ ] Un tri par fusion est codé et fonctionnel.
-- [ ] Un tri standard du langage ou de ses libraires est utilisé et fonctionnel.
-- [ ] Les temps d'exécution sont comparés dans un ou plusieurs graphiques.
-- [ ] Les consommations mémoire sont comparées dans un ou plusieurs graphique.
-- [ ] L'analyse est pertinente.
-
-### Etablissement et vérification d'une hypothèse 
-
-- [ ] Une hypothèse pertinente est formulée. 
-- [ ] L'hypothèse est originale. 
-- [ ] L'hypothèse est difficile.
-- [ ] Un plan d'expérimentation pertinent est présenté.
-- [ ] Les résultats de l'expérimentation sont présentés.
-- [ ] L'analyse est pertinente. 
-
-### Evaluation des performances
-
-- [ ] La plateforme expérimentale est décrite dans le rendu.
-- [ ] Les paramètres expérimentaux sont indiqués dans le rendu.
+- [ ] Le protocole expérimental de la comparaison des tris est clairement et pleinement décrit
 - [ ] Les paramètres expérimentaux ne sont pas trop petits : tous les phénomènes et épi-phénomènes sont visibles.
 - [ ] Les paramètres expérimentaux ne sont pas trop grands : il n'y a pas d'expériences superflues.
-- [ ] Les performances sont analysées en regard de la théorie. 
-- [ ] Les performances sont analysées face à plusieurs tests différents.
-- [ ] Les performances sont analysées en regard de la consommation énergétique.
 
-### Limites et pespectives
+### Résultats de la comparaison
 
-- [ ] Les limites de l'étude sont données dans le rendu. 
-- [ ] Ces limites sont pertinentes.
-- [ ] Des perspectives sont données dans le rendu.
-- [ ] Ces perspectives sont pertinentes et en rapport avec les limites.
+- [ ] L'analyse des résultats est pertinente.
+- [ ] Les limites sont exhaustives et pertinentes.
+- [ ] La conclusion tient en une phrase pertinente.
+
+### Vérification d'une hypothèse 
+
+- [ ] L'hypothèse est de difficulté ***. 
+- [ ] L'hypothèse est de difficulté au moins **. 
+- [ ] Le protocole expérimental est exhaustif et pertinent.
+- [ ] Les visualisations sont exhaustives et pertinentes.
+- [ ] Les limites et conclusions sont exhaustives et pertinentes.
+- [ ] Les conclusions se confrontent à la théorie.
+
+### Conclusion générale
+
+- [ ] La conclusion générale est succincte, pertinente, et prend de la hauteur.
 
 ### Reproductibilité
 
 - [ ] Les codes sont propres et commentés, et en lien direct depuis le rendu.
-- [ ] Les codes sont systématiquement testés et les résultats des tests sont consultables.
+- [ ] Les codes sont testés systématiquement et les résultats des tests sont consultables.
 - [ ] Les commandes pour reproduire toutes les expérimentations sont indiquées dans le code et le rendu.
-- [ ] La commande pour compiler tous les codes est un make unique.
-- [ ] Les données des expérimentations sont en lien depuis le rendu.
-- [ ] Un script unique permet de reproduire toutes les expérimentations ; il est indiqué dans le rendu.
+- [ ] Un make unique permet de compiler tous les codes.
+- [ ] Une commande unique permet de reproduire toutes les expérimentations et visualisations.
 
 ### Qualité des représentations graphiques
 
 - [ ] Les graphiques ne comportent aucun artefact sans justification.
 - [ ] Les axes et unités sont bien renseignés.
-- [ ] Les légendes sont pertinentes. 
-- [ ] Les échelles permettent de comparer aisément les séries.
+- [ ] Les graphiques comportent : titre, auteurs et source.
+- [ ] Les graphiques n'induisent pas en erreur un lecteur rapide (qui ne lit pas les axes).
 
 ## Rendu 
 
 ### Générateur de données
 
-Lien vers le code : 
+[Lien vers le code](lien)
 
 Utilisation :
 ```
-Executable paramètres
+Exécutables et paramètres
 ```
 
 ### Comparaison des tris et langages
@@ -106,9 +91,9 @@ Choix des tris :
 
 Choix des langages :
 
-  - Compilé (par défaut C) :
-  - Compilé/interprêté  (par défaut C# ou Java) :
-  - Interprété (par défaut Python) :
+  - Compilé : [Lien vers le code (par défaut C)](lien)
+  - Compilé/interprêté : [Lien vers le code (par défaut C# ou Java)](lien)
+  - Interprété : [Lien vers le code (par défaut Python)](lien)
 
 #### Description du protocole expérimental
 
@@ -123,6 +108,13 @@ Description de la machine de test
 
 #### Résultats
 
+```
+Ligne de commande pour produire les résultats
+```
+
+[Lien vers le fichier de données](lien)
+
+
 ##### Temps d'exécution 
 
 `Unique graphique temps d'exécution`
@@ -135,12 +127,18 @@ Analyse du graphique
 
 Analyse du graphique
 
-#### Conclusion de la comparaison des tris et langages
+#### Limites et conclusion de la comparaison des tris et langages
+
+Mettre les résultats pratiques en regard des résultast théoriques.
+
+Identifier les limites de l'analyse.
+
+Conclure en une seule phrase.
 
 
 ### Hypothèse
 
-Choisir une hypothèse dans la liste suivante et l'expérimenter, ou bien concevoir sa propre hypothèse et la faire valider par son enseignant. Supprimer du README les hypothèses non fouillées.
+Choisir une hypothèse dans la liste suivante et la vérifier par une exéprimentation, ou bien concevoir sa propre hypothèse et la faire valider par son enseignant. Supprimer du README les hypothèses non fouillées.
 Le nombre d'étoiles indique la difficulté.
 
 _Attention_ : certaines hypothèses peuvent être fausses.
@@ -158,3 +156,4 @@ _Attention_ : certaines hypothèses peuvent être fausses.
 #### Résultats
 
 ### Conclusion générale
+

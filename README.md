@@ -3,7 +3,7 @@
 ## Objectifs pédagogiques
 
   - Comprendre la complexité algorithmique. 
-  - Savoir mesurer des performances applicatives en boite noire.
+  - Savoir mesurer des performances applicatives en boîte noire.
   - Savoir analyser des performances applicatives en regard de complexités théoriques. 
 
 ## Objectifs de réalisation
@@ -28,7 +28,7 @@
 
 - [ ] Au moins trois tris dans trois langages sont codés et fonctionnels.
 - [ ] Au moins deux tris dans deux langages sont codés et fonctionnels.
-- [ ] Au moins un tri dans un langage est codés et fonctionnel.
+- [ ] Au moins un tri dans un langage est codé et fonctionnel.
 
 ### Description du protocole expérimental de la comparaison des tris
 
@@ -92,7 +92,7 @@ Choix des tris :
 Choix des langages :
 
   - Compilé : [Lien vers le code (par défaut C)](lien)
-  - Compilé/interprêté : [Lien vers le code (par défaut C# ou Java)](lien)
+  - Compilé/interprété : [Lien vers le code (par défaut C# ou Java)](lien)
   - Interprété : [Lien vers le code (par défaut Python)](lien)
 
 #### Description du protocole expérimental
@@ -100,7 +100,7 @@ Choix des langages :
   - Nombre d'expériences par tri/langage : 
   - Plage des paramètres : 
   - Méthode de fixation des paramètres :
-  - Description de la machin de test :
+  - Description de la machine de test :
 
 ```
 Description de la machine de test
@@ -129,7 +129,7 @@ Analyse du graphique
 
 #### Limites et conclusion de la comparaison des tris et langages
 
-Mettre les résultats pratiques en regard des résultast théoriques.
+Mettre les résultats pratiques en regard des résultats théoriques.
 
 Identifier les limites de l'analyse.
 
@@ -138,7 +138,7 @@ Conclure en une seule phrase.
 
 ### Hypothèse
 
-Choisir une hypothèse dans la liste suivante et la vérifier par une exéprimentation, ou bien concevoir sa propre hypothèse et la faire valider par son enseignant. Supprimer du README les hypothèses non fouillées.
+Choisir une hypothèse dans la liste suivante et la vérifier par une expérimentation, ou bien concevoir sa propre hypothèse et la faire valider par son enseignant. Supprimer du README les hypothèses non fouillées.
 Le nombre d'étoiles indique la difficulté.
 
 _Attention_ : certaines hypothèses peuvent être fausses.

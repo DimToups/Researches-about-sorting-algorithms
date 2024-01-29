@@ -14,6 +14,7 @@
   - de trois tris différents
   - dans trois langages différents
   - sur des données complètement aléatoires
+  - décompte des opérations élémentaires
 
 2. Explorer une hypothèse
 
@@ -23,12 +24,14 @@
 ### Générateur de données de test.
 
 - [ ] Génère un fichier d'entiers aléatoires selon une taille donnée en entrée.
+- [ ] Génère des fichiers d'entiers qui correspondent aux meilleurs et aux pires cas de complexité des algorithmes
 
 ### Comparaison des tris et langages
 
 - [ ] Au moins trois tris dans trois langages sont codés et fonctionnels.
 - [ ] Au moins deux tris dans deux langages sont codés et fonctionnels.
 - [ ] Au moins un tri dans un langage est codé et fonctionnel.
+- [ ] Les calculs de complexité sont correctement effectués.
 
 ### Description du protocole expérimental de la comparaison des tris
 
@@ -83,13 +86,13 @@ Exécutables et paramètres
 
 ### Comparaison des tris et langages
 
-Choix des tris : 
+Tris : 
 
-  -
-  - 
-  -
+  - Insertion
+  - Rapide
+  - fusion
 
-Choix des langages :
+Langages :
 
   - Compilé : [Lien vers le code (par défaut C)](lien)
   - Compilé/interprété : [Lien vers le code (par défaut C# ou Java)](lien)
@@ -145,11 +148,17 @@ _Attention_ : certaines hypothèses peuvent être fausses.
 
 - Le choix du pivot influence les performances du tri rapide (*)
 - C est plus rapide que Java (*)
+- Le tri fusion peut être optimiser en terme de vitesse de calcul. (**)
+- Les langages compilés sont plus rapides que les langages interprétés. (**)
 - La nature des données à trier influence les performances des tris (**)
 - Les options du compilateur influencent les performances (**).
+- Il existe des optimisations du tri rapide pour avoir une complexité optimale sur les tableaux constants et strictement décroissants (**).
 - Le tri rapide est plus complexe mais plus rapide que le tri fusion (**)
+- Le tri fusion peut être optimiser en terme d'allocation mémoire. (**)
+- Les tris génériques (void*, template...) sont plus lents. (**/***)
 - Détecter la nature des données permet de gagner en temps d'exécution (***)
-- Python est ralenti par l'absence de typage (***)
+- Le tri insertion permet d'optimiser le tri fusion et le ti rapide. (***)
+- Python est ralenti par l'absence de typage (simulation possible en C). (***)
 
 #### Description du protocole expérimental 
 

@@ -60,7 +60,7 @@ void sousTriFusion (int* A, int p,int r) {
   }
 }
 
-void triFusion(int* A, int n) {
+  void triFusion(int* A, int n) {
   sousTriFusion(A,0,n);
 }
 

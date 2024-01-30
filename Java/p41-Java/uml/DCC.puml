@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package src{
+    class Sorter{
+        ..Fields..
+        - array : Integer[*]
+        ..Constructor..
+        + <<create>> Sorter(arraySize : Integer)
+        ..Methods..
+        + randomFill()
+        + displayArray()
+        + insertSort()
+        + mergeSort(p : Integer, r : Integer)
+        + subMergeSort(p : Integer, q : Integer, r : Integer)
+        + quicksort()
+        + subQuickSort(p : Integer, r : Integer)
+        + partition(p : Integer, r : Integer) : Integer
+        + getArray() : Integer[*]
+        + setArray(array : Integer[*])
+    }
+    class Main{
+        + main(args : String[]) {static}
+    }
+}
+
+src.Main .> src.Sorter : <<uses>>
+
+@enduml

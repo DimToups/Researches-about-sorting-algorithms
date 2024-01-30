@@ -20,14 +20,21 @@ public class Main {
         Sorter sorter = new Sorter(nbValues);
 
         if(tri == 0)
-            sorter.insertSort();
-        else if(tri == 1){
+            sorter.insertSort(nbValues);
+        else if(tri == 1) {
             sorter.randomFill(nbValues);
-            sorter.mergeSort(0,sorter.getArray().size());
+            sorter.mergeSort(0, sorter.getArray().size());
         }
-        else{
+        else {
             sorter.randomFill(nbValues);
             sorter.quickSort();
         }
+
+        // Affichage du tableau
+        sorter.displayArray();
+
+        // Vérification de la conformité du tri
+        if(!sorter.verifySort())
+            System.out.println("Le tableau est mal trié");
     }
 }

@@ -23,7 +23,7 @@ public class Main {
             sorter.insertSort(nbValues);
         else if(tri == 1) {
             sorter.randomFill(nbValues);
-            sorter.mergeSort(0, sorter.getArray().size());
+            sorter.mergeSort();
         }
         else {
             sorter.randomFill(nbValues);

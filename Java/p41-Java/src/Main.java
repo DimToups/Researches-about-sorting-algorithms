@@ -1,4 +1,12 @@
 public class Main {
+    /**
+     * Méthode d'exécution du projet pour effectuer un tri sur un tableau
+     * @param args Les arguments d'exécutions du programme.
+     *             -i --insert : applique un tri par insertion
+     *             -m --merge : applique un tri par fusion
+     *             -q --quick : applique un tri rapide
+     *             <number> : le nombre de valeurs dans le tableau
+     */
     public static void main(String[] args) {
         // Decision of the number of values for the array
         int nbValues = 100;

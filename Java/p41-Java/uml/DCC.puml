@@ -8,11 +8,13 @@ package src{
         ..Constructor..
         + <<create>> Sorter(arraySize : Integer)
         ..Methods..
-        + randomFill()
+        + randomFill(n : Integer)
         + displayArray()
-        + insertSort()
-        + mergeSort(p : Integer, r : Integer)
-        + subMergeSort(p : Integer, q : Integer, r : Integer)
+        + verifySort() : Boolean
+        + insertSort(n : Integer)
+        + mergeSort()
+        + subMergeSort(p : Integer, r : Integer)
+        + fusion(p : Integer, q : Integer, r : Integer)
         + quicksort()
         + subQuickSort(p : Integer, r : Integer)
         + partition(p : Integer, r : Integer) : Integer

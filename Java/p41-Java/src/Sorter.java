@@ -9,13 +9,11 @@ public class Sorter {
     }
     public void randomFill(int n){
         Random rand = new Random();
-
-        // Remplissage du tableau
         for(int i = 0; i < n; i++)
             this.array.add(rand.nextInt(100));
     }
     public void displayArray(){
-        // Vérification de la présence de valeurs
+        // Verification of the existence of a single value
         if(array.isEmpty()){
             System.out.println("Le tableau est vide");
             return;
@@ -70,7 +68,7 @@ public class Sorter {
         List<Integer> ag = new ArrayList<>(n1);
         List<Integer> ad = new ArrayList<>(n2);
 
-        //Remplissage des tableaux
+        // Array filling
         for(int i = p; i < q; i++)
             ag.add(array.get(i));
         for(int i = q; i < r; i++)

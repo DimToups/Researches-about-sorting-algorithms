@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Sorter {
+public class    Sorter {
     private List<Integer> array;
     public Sorter(int arraySize){
         this.array = new ArrayList<>(arraySize);
@@ -40,15 +40,14 @@ public class Sorter {
         return isSorted;
     }
     public void insertSort(int n){
-        array.add(0);
-        for(int i = 0; i < n - 1; i++){
-            array.add(i);
+        for(int i = 0; i < n ; i++){
+            int cle =array.get(i);
             int j = i - 1;
-            while(j >= 0 && array.get(j) > i){
+            while(j >= 0 && array.get(j) > cle){
                 array.set(j + 1, j);
                 j--;
             }
-            array.set(j + 1, i);
+            array.set(j + 1, cle);
         }
     }
     public void mergeSort() {
@@ -97,14 +96,34 @@ public class Sorter {
             i++;
         }
     }
-    public void quickSort(){
+    public void quickSort(int n ){
+        subQuickSort(0,n);
 
     }
     public void subQuickSort(int p, int r){
-
+        if(p < r - 1){
+            int q = partition( p, r);
+            subQuickSort( p, q);
+            subQuickSort( q + 1, r);
+        }
     }
     public int partition(int p, int r){
-        return 0;
+
+        int pivot = array.get(r - 1);
+        int i = p;
+        for(int j = p; j < r - 1; j++){
+            if(array.get(j) <= pivot){
+                int v = array.get(i);
+                array.set(i, array.get(j));
+                array.set(j, v);
+                i++;
+            }
+        }
+        int v = array.get(i);
+        array.set(i, array.get(r - 1));
+        array.set(r - 1, v);
+
+        return i;
     }
     public List<Integer> getArray(){
         return this.array;

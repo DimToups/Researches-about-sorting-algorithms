@@ -57,7 +57,7 @@ void triFusion(int* A, int n) {
 
 
 int main() {
-    int max = 100000000;
+  int max = 20000000;
     int *a= malloc(max * sizeof(int));;
     srand(time(NULL));
 
@@ -66,18 +66,17 @@ int main() {
     printf("\n");
 
     long clk_tck = CLOCKS_PER_SEC;
-    clock_t t1, t2;
+    clock_t t1;
 
     t1 = clock();
     triFusion(a, max);
-    t1 = clock();
+    t1= clock();
 
     printf("\n");
-    (void)printf("Nb ticks/seconde = %ld,  Nb ticks depart : %ld, "
-                "Nb ticks final : %ld\n",
-                clk_tck, (long)t1, (long)t2);
-   (void)printf("Temps consomme (s) : %lf \n",
-                (double)(t1-t2)/(double)clk_tck);
+    printf("Nb ticks/seconde = %ld,  Nb ticks depart : %ld, n",
+                clk_tck, (long)t1);
+   printf("Temps consomme (s) : %lf \n",
+                (double)(t1)/(double)clk_tck);
 
     for (int i = 1; i < max; i++)
 	if (a[i]<a[i-1])

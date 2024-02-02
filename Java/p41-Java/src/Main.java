@@ -24,8 +24,7 @@ public class Main {
 
         // Instanciation and initialisation of a Sorter
         Sorter sorter = new Sorter(nbValues);
-        if(tri != 0)
-            sorter.randomFill(nbValues);
+        sorter.randomFill(nbValues);
 
         // Start of the chronometer
         long start = System.nanoTime();
@@ -36,7 +35,7 @@ public class Main {
         else if(tri == 1)
             sorter.mergeSort();
         else
-            sorter.quickSort();
+            sorter.quickSort(nbValues);
 
         // End of the chronometer
         long end = System.nanoTime();

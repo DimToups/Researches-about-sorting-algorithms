@@ -67,7 +67,7 @@ int main(int argc, char** argv){
 
 	// Inscription du temps d'exécution dans le fichier
 	if(estValide)
-	    fprintf(csvFile, "\"%7lf\",", (double) (t2 - t1) / (double) CLOCKS_PER_SEC);
+	    fprintf(csvFile, "%7lf,", (double) (t2 - t1) / (double) CLOCKS_PER_SEC);
 	else
 	    fprintf(csvFile, "-1,");
     }

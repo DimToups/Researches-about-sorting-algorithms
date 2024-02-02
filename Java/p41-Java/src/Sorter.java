@@ -9,13 +9,11 @@ public class Sorter {
     }
     public void randomFill(int n){
         Random rand = new Random();
-
-        // Remplissage du tableau
         for(int i = 0; i < n; i++)
             this.array.add(rand.nextInt(100));
     }
     public void displayArray(){
-        // Vérification de la présence de valeurs
+        // Verification of the existence of a single value
         if(array.isEmpty()){
             System.out.println("Le tableau est vide");
             return;
@@ -43,7 +41,7 @@ public class Sorter {
     }
     public void insertSort(int n){
         array.add(0);
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n - 1; i++){
             array.add(i);
             int j = i - 1;
             while(j >= 0 && array.get(j) > i){
@@ -53,11 +51,51 @@ public class Sorter {
             array.set(j + 1, i);
         }
     }
-    public void mergeSort(int p, int q) {
-
+    public void mergeSort() {
+        subMergeSort(0, array.size());
     }
-    public void subMergeSort(int p, int q, int r) {
+    private void subMergeSort(int p, int r) {
+        if(p < r - 1){
+            int q = (p + r) / 2;
+            subMergeSort(p, q);
+            subMergeSort(q, r);
+            fusion(p, q, r);
+        }
+    }
+    private void fusion(int p, int q, int r){
+        int n1 = q - p;
+        int n2 = r - q;
+        List<Integer> ag = new ArrayList<>(n1);
+        List<Integer> ad = new ArrayList<>(n2);
 
+        // Array filling
+        for(int i = p; i < q; i++)
+            ag.add(array.get(i));
+        for(int i = q; i < r; i++)
+            ad.add(array.get(i));
+
+        int indg = 0;
+        int indd = 0;
+        int i = p;
+        while(i < r){
+            if(indg == n1){
+                array.set(i, ad.get(indd));
+                indd++;
+            }
+            else if(indd == n2){
+                array.set(i, ag.get(indg));
+                indg++;
+            }
+            else if(ag.get(indg) < ad.get(indd)){
+                array.set(i, ag.get(indg));
+                indg++;
+            }
+            else{
+                array.set(i, ad.get(indd));
+                indd++;
+            }
+            i++;
+        }
     }
     public void quickSort(){
 

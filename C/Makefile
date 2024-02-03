@@ -10,4 +10,4 @@ triRapide: algos/triRapide.c
 	gcc -o bin/triRapide -Wall algos/triRapide.c
 
 csvWriter: csvWriter.c
-	gcc -o bin/csvWriter -Wall csvWriter.c lib/arrayManager.c lib/triInsertion.c lib/triFusion.c lib/triRapide.c
+	gcc -o bin/csvWriter -lm -Wall csvWriter.c lib/arrayManager.c lib/triInsertion.c lib/triFusion.c lib/triRapide.c

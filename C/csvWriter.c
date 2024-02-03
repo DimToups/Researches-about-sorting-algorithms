@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <math.h>
+#include <stdint.h>
 
 int main(int argc, char** argv){
     // Vérification de la conformité des arguments
@@ -40,9 +42,22 @@ int main(int argc, char** argv){
 
     // Allocation d'un tableau d'entiers
     int *A = malloc(atoi(argv[2]) * sizeof(int));
+
+    // Instanciation de variables de statistiques
+    uint32_t nbRatures = 0;
+    clock_t ts, tf;
+
+    // Lancement du chronomètre de début d'exécution de la boucle
+    ts = clock();
     
     // Execution du tri
     for(int i = 0; i < atoi(argv[4]); i++){
+	// Affichage de la progression du programme
+	if(ceil(log((double) i)) > ceil(log((double) i - 1)))
+	    printf("\r%d / %d", i, atoi(argv[4]));
+	else
+	    printf("\r%d", i);
+	
 	// Réinitialisation du tableau
 	if(i != 0)
 	    memset(A, 0, sizeof(int));
@@ -71,9 +86,16 @@ int main(int argc, char** argv){
 	// Inscription du temps d'exécution dans le fichier
 	if(estValide)
 	    fprintf(csvFile, "%7lf,", (double) (t2 - t1) / (double) CLOCKS_PER_SEC);
-	else
+	else{
+	    nbRatures++;
 	    fprintf(csvFile, "-1,");
+	}
     }
+    // Arrêt du chronomètre d'exécution de la boucle
+    tf = clock();
+
+    // Affichage des informations d'exécution
+    printf("\r%d / %d\nTemps d'exécution du programme : %lf secondes\nNombre de tri ratés : %d\n", atoi(argv[4]), atoi(argv[4]), (double)(tf - ts) / (double) CLOCKS_PER_SEC, nbRatures);
 
     // Fermeture du fichier csv
     fclose(csvFile);

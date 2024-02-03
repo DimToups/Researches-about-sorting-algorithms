@@ -9,6 +9,11 @@ void remplissageIncremental(int *array, int nbVal){
 	array[i] = i;
 }
 
+void remplissageIncrementalDecale(int *array, int nbVal, int decalage){
+    for(int i = 0; i < nbVal; i++)
+        array[i] = (i + decalage) % nbVal;
+}
+
 void remplissageAleatoire(int *array, int nbVal, int valMax){
     srand(time(NULL));
     for(int i = 0; i < nbVal; i++)

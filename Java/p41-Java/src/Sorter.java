@@ -2,66 +2,62 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class    Sorter {
-    private List<Integer> array;
-    public Sorter(int arraySize){
-        this.array = new ArrayList<>(arraySize);
-    }
-    public void randomFill(int n){
+public interface Sorter {
+    static void randomFill(List<Integer> a, int n, int maxVal){
         Random rand = new Random();
         for(int i = 0; i < n; i++)
-            this.array.add(rand.nextInt(100));
+            a.add(rand.nextInt(maxVal));
     }
-    public void displayArray(){
+    static void displayArray(List<Integer> a){
         // Verification of the existence of a single value
-        if(array.isEmpty()){
+        if(a.isEmpty()){
             System.out.println("Le tableau est vide");
             return;
         }
 
-        for(int i = 0 ; i < this.array.size(); i++) {
+        for(int i = 0 ; i < a.size(); i++) {
             if(i % 10 == 0) {
                 if(i != 0)
                     System.out.println("|");
                 System.out.print("[" + i + "] : ");
             }
-            System.out.print("| " + array.get(i) + " ");
+            System.out.print("| " + a.get(i) + " ");
         }
         System.out.println("|");
     }
-    public boolean verifySort(){
+    static boolean verifySort(List<Integer> a){
         boolean isSorted = true;
         int i = 1;
-        while(isSorted && i < array.size()){
-            if(array.get(i - 1) > array.get(i))
+        while(isSorted && i < a.size()){
+            if(a.get(i - 1) > a.get(i))
                 isSorted = false;
             i++;
         }
         return isSorted;
     }
-    public void insertSort(int n){
+    static void insertSort(List<Integer> a, int n){
         for(int i = 0; i < n ; i++){
-            int cle =array.get(i);
+            int cle = a.get(i);
             int j = i - 1;
-            while(j >= 0 && array.get(j) > cle){
-                array.set(j + 1, j);
+            while(j >= 0 && a.get(j) > cle){
+                a.set(j + 1, j);
                 j--;
             }
-            array.set(j + 1, cle);
+            a.set(j + 1, cle);
         }
     }
-    public void mergeSort() {
-        subMergeSort(0, array.size());
+    static void mergeSort(List<Integer> a) {
+        subMergeSort(a, 0, a.size());
     }
-    private void subMergeSort(int p, int r) {
+    private static  void subMergeSort(List<Integer> a, int p, int r) {
         if(p < r - 1){
             int q = (p + r) / 2;
-            subMergeSort(p, q);
-            subMergeSort(q, r);
-            fusion(p, q, r);
+            subMergeSort(a, p, q);
+            subMergeSort(a, q, r);
+            fusion(a, p, q, r);
         }
     }
-    private void fusion(int p, int q, int r){
+    private static  void fusion(List<Integer> a, int p, int q, int r){
         int n1 = q - p;
         int n2 = r - q;
         List<Integer> ag = new ArrayList<>(n1);
@@ -69,66 +65,59 @@ public class    Sorter {
 
         // Array filling
         for(int i = p; i < q; i++)
-            ag.add(array.get(i));
+            ag.add(a.get(i));
         for(int i = q; i < r; i++)
-            ad.add(array.get(i));
+            ad.add(a.get(i));
 
         int indg = 0;
         int indd = 0;
         int i = p;
         while(i < r){
             if(indg == n1){
-                array.set(i, ad.get(indd));
+                a.set(i, ad.get(indd));
                 indd++;
             }
             else if(indd == n2){
-                array.set(i, ag.get(indg));
+                a.set(i, ag.get(indg));
                 indg++;
             }
             else if(ag.get(indg) < ad.get(indd)){
-                array.set(i, ag.get(indg));
+                a.set(i, ag.get(indg));
                 indg++;
             }
             else{
-                array.set(i, ad.get(indd));
+                a.set(i, ad.get(indd));
                 indd++;
             }
             i++;
         }
     }
-    public void quickSort(int n ){
-        subQuickSort(0,n);
+    static void quickSort(List<Integer> a, int n ){
+        subQuickSort(a, 0,n);
 
     }
-    public void subQuickSort(int p, int r){
+    static void subQuickSort(List<Integer> a, int p, int r){
         if(p < r - 1){
-            int q = partition( p, r);
-            subQuickSort( p, q);
-            subQuickSort( q + 1, r);
+            int q = partition(a, p, r);
+            subQuickSort(a, p, q);
+            subQuickSort(a,q + 1, r);
         }
     }
-    public int partition(int p, int r){
-
-        int pivot = array.get(r - 1);
+    static int partition(List<Integer> a, int p, int r){
+        int pivot = a.get(r - 1);
         int i = p;
         for(int j = p; j < r - 1; j++){
-            if(array.get(j) <= pivot){
-                int v = array.get(i);
-                array.set(i, array.get(j));
-                array.set(j, v);
+            if(a.get(j) <= pivot){
+                int v = a.get(i);
+                a.set(i, a.get(j));
+                a.set(j, v);
                 i++;
             }
         }
-        int v = array.get(i);
-        array.set(i, array.get(r - 1));
-        array.set(r - 1, v);
+        int v = a.get(i);
+        a.set(i, a.get(r - 1));
+        a.set(r - 1, v);
 
         return i;
-    }
-    public List<Integer> getArray(){
-        return this.array;
-    }
-    public void setArray(List<Integer> array){
-        this.array = array;
     }
 }

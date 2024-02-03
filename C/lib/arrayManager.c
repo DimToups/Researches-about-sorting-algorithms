@@ -4,7 +4,12 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void remplissageTableau(int *array, int nbVal, int valMax){
+void remplissageIncremental(int *array, int nbVal){
+    for(int i = 0; i < nbVal; i++)
+	array[i] = i;
+}
+
+void remplissageAleatoire(int *array, int nbVal, int valMax){
     srand(time(NULL));
     for(int i = 0; i < nbVal; i++)
         array[i] = rand() % valMax;

@@ -2,7 +2,9 @@
 
 #include <stdbool.h>
 
-void remplissageTableau(int *array, int nbVal, int valMax);
+void remplissageIncremental(int *array, int nbVal);
+
+void remplissageAleatoire(int *array, int nbVal, int valMax);
 
 bool estTrie(int *A);
 

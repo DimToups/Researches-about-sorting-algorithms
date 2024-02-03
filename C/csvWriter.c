@@ -19,11 +19,11 @@ int main(int argc, char** argv){
     FILE *csvFile;
     char *fileName = malloc(64 * sizeof(char));
     strcat(fileName, "out/");
-    if(strcmp(argv[1], "-i"))
+    if(!strcmp(argv[1], "-i"))
 	strcat(fileName, "insertion");
-    else if(strcmp(argv[1], "-f"))
+    else if(!strcmp(argv[1], "-f"))
 	strcat(fileName, "fusion");
-    else if(strcmp(argv[1], "-r"))
+    else if(!strcmp(argv[1], "-r"))
 	strcat(fileName, "rapide");
     else{
 	printf("L'algorithme renseigné n'est pas valide");
@@ -33,7 +33,10 @@ int main(int argc, char** argv){
     strcat(fileName, ".csv");
 
     // Ouverture ou création du fichier
-    csvFile = fopen(fileName, "a");
+    if((csvFile = fopen(fileName, "a")) == NULL){
+	printf("Une erreur est survenue lors de l'ouverture du fichier\n");
+	return EXIT_FAILURE;
+    }
 
     // Allocation d'un tableau d'entiers
     int *A = malloc(atoi(argv[2]) * sizeof(int));
@@ -45,16 +48,16 @@ int main(int argc, char** argv){
 	    memset(A, 0, sizeof(int));
 
 	// Remplissage du tableau
-	remplissageTableau(A, atoi(argv[2]), atoi(argv[3]));
+	remplissageAleatoire(A, atoi(argv[2]), atoi(argv[3]));
 
 	// Préparation et lancement du chronomètre
 	clock_t t1, t2;
 	t1 = clock();
 
 	// Choix du tri a effectuer
-	if(strcmp(argv[1], "-i"))
+	if(!strcmp(argv[1], "-i"))
 	    triInsertion(A, atoi(argv[2]));
-	else if(strcmp(argv[1], "-f"))
+	else if(!strcmp(argv[1], "-f"))
             triFusion(A, atoi(argv[2]));
 	else
 	    triRapide(A, atoi(argv[2]));
@@ -72,7 +75,7 @@ int main(int argc, char** argv){
 	    fprintf(csvFile, "-1,");
     }
 
-    // Fermeture du fichier
+    // Fermeture du fichier csv
     fclose(csvFile);
 
     // Libération de la mémoire

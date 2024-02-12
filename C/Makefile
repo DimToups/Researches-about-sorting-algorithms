@@ -1,10 +1,13 @@
-all: triInsertion triFusion triRapide
+all: triInsertion triFusion triRapide csvWriter
 
-triInsertion: triInsertion.c
-	gcc -o bin/triInsertion -Wall triInsertion.c
+triInsertion: algos/triInsertion.c
+	gcc -o bin/triInsertion -Wall algos/triInsertion.c
 
-triFusion: triFusion.c
-	gcc -o bin/triFusion -Wall triFusion.c
+triFusion: algos/triFusion.c
+	gcc -o bin/triFusion -Wall algos/triFusion.c
 
-triRapide: triRapide.c
-	gcc -o bin/triRapide -Wall triRapide.c
+triRapide: algos/triRapide.c
+	gcc -o bin/triRapide -Wall algos/triRapide.c
+
+csvWriter: csvWriter.c
+	gcc -o bin/csvWriter -lm -Wall csvWriter.c lib/arrayManager.c lib/triInsertion.c lib/triFusion.c lib/triRapide.c

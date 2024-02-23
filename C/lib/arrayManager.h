@@ -8,5 +8,6 @@ void remplissageIncrementalDecale(int *array, int nbVal, int decalage);
 
 void remplissageAleatoire(int *array, int nbVal, int valMax);
 
-bool estTrie(int *A);
+void remplissageInverse(int* array, int nbVal);
 
+bool estTrie(int *A);

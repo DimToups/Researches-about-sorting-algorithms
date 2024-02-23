@@ -20,6 +20,11 @@ void remplissageAleatoire(int *array, int nbVal, int valMax){
         array[i] = rand() % valMax;
 }
 
+void remplissageInverse(int* array, int nbVal){
+    for(int i = 0; i < nbVal; i++)
+        array[i] = nbVal - i;
+}
+
 bool estTrie(int *A){
     bool estTrie = true;
     int i = 1;

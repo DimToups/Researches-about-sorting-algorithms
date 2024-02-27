@@ -5,7 +5,7 @@ min=10000
 max=50000
 pas=1000
 remplissage='a'
-decalage=0
+decalage=1
 fichier='./out/donnees.csv'
 
 while getopts ":a:m:M:p:r:n:" flag
@@ -19,7 +19,6 @@ do
         n) fichier="./out/"${OPTARG}".csv";;
     esac
 done
-echo $fichier
 
 echo version,taille,temps 1> $fichier
 
@@ -48,9 +47,9 @@ do
     then
         if [ $remplissage == 'd' ]
         then
-            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage $decalage) 2>&1`
+            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage $decalage> /dev/null) 2>&1`
         else
-            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage > /dev/null ) 2>&1`
+            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage > /dev/null) 2>&1`
         fi
         echo "rapide,$taille,$res" 1>> $fichier
     elif [ $algo == 'a' ]
@@ -58,7 +57,7 @@ do
         # Insertion
         if [ $remplissage == 'd' ]
         then
-            res=`(/usr/bin/time -f "%U"  bin/triInsertion $taille $max -r $remplissage $decalage) 2>&1`
+            res=`(/usr/bin/time -f "%U"  bin/triInsertion $taille $max -r $remplissage $decalage> /dev/null) 2>&1`
         else
             res=`(/usr/bin/time -f "%U"  bin/triInsertion $taille $max -r $remplissage > /dev/null ) 2>&1`
         fi
@@ -67,7 +66,7 @@ do
         # Fusion
         if [ $remplissage == 'd' ]
         then
-            res=`(/usr/bin/time -f "%U"  bin/triFusion $taille $max -r $remplissage $decalage ) 2>&1`
+            res=`(/usr/bin/time -f "%U"  bin/triFusion $taille $max -r $remplissage $decalage > /dev/null) 2>&1`
         else
             res=`(/usr/bin/time -f "%U"  bin/triFusion $taille $max -r $remplissage > /dev/null ) 2>&1`
         fi
@@ -76,7 +75,7 @@ do
         # Rapide
         if [ $remplissage == 'd' ]
         then
-            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage $decalage > /dev/null ) 2>&1`
+            res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage $decalage > /dev/null) 2>&1`
         else
             res=`(/usr/bin/time -f "%U"  bin/triRapide $taille $max -r $remplissage > /dev/null ) 2>&1`
         fi

@@ -6,9 +6,10 @@ max=50000
 pas=1000
 remplissage='a'
 decalage=1
-fichier='./out/donnees.csv'
+nomFichier='donnees'
+scriptR='n'
 
-while getopts ":a:m:M:p:r:n:" flag
+while getopts ":a:m:M:p:r:n:s:" flag
 do
     case "${flag}" in
         a) algo=${OPTARG};;
@@ -16,9 +17,13 @@ do
         M) max=${OPTARG};;
 	    p) pas=${OPTARG};;
         r) remplissage=${OPTARG};;
-        n) fichier="./out/"${OPTARG}".csv";;
+        n) nomFichier=${OPTARG};;
+        s) scriptR=${OPTARG};;
     esac
 done
+echo $scriptR
+
+fichier='./out/'$nomFichier'.csv'
 
 echo version,taille,temps 1> $fichier
 
@@ -86,3 +91,12 @@ do
 
     taille=$(expr $taille + $pas)
 done
+
+if [ $scriptR == 'n' ]
+then
+    Rscript ./rScripts/normal.R $nomFichier > /dev/null
+elif [ $scriptR == 'l' ]
+then
+    Rscript ./rScripts/logarithme.R $nomFichier > /dev/null
+fi
+

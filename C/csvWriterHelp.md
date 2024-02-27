@@ -20,6 +20,6 @@ Le pas à ajouter à la taille du tableau à trier. Le pas est de 1000 par défa
 Le type de remplissage de tableau à faire par défaut. Trois types de remplissages sont disponibles :
 - **a** : remplissage aléatoire. Option par défaut
 - **i** : remplissage incrémental
-- **d ** : remplissage incrémental en décalé. Le décalage doit être inscrit manuellement pour l'instant
+- **d** : remplissage incrémental en décalé. Le décalage doit être inscrit manuellement pour l'instant
 ### -n [fichier de sortie]
 Le nom du fichier de sortie du programme. Le fichier sera toujours positionné dans le répertoire ./out/ et sera toujours de type csv. Le fichier de sortie de base est ./out/donnees.csv Le fichier de sortie sera ecrasé s'il existe déjà, il est donc important de faire attention au fichier que vous allez écraser.

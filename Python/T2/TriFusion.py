@@ -1,6 +1,8 @@
 import time
 import random
 
+import sys
+
 
 def fusion(A, p, q, r):
     n1 = q - p
@@ -50,21 +52,51 @@ def triFusion(A, n):
     sousTriFusion(A, 0, n)
 
 
+
+    
+def tableauAleatoire(n):
+    t = [0]*n
+    for i in range(n):
+        t[i] = random.randint(1, n)
+    return t
+
+def tableauCroissant(n):
+    t = [0]*n
+    for i in range(n):
+        t[i] = i
+    return t
+
+def tableauDecroissant(n):
+    t = [0]*n
+    for i in range(n):
+        t[i] = n - i
+    return t
+
+def TableauCroissantSaufDernier(n):
+    t = [0]*n
+    for i in range(n):
+        t[i] = i
+    t[n-1] = 0
+    return t
+
+
 if __name__ == "__main__":
-    max = 100
+    max = int(sys.argv[1])
     a = [0]*max
-    for i in range(max):
-        a[i] = random.randint(1, 100)
-
-    # Démarrer le chronomètre
-    debut = time.time()
-
+    if int(sys.argv[2]) == 0:
+        a = tableauAleatoire(max)
+    elif int(sys.argv[2]) == 1:
+        a = tableauCroissant(max)
+    elif int(sys.argv[2]) == 2:
+        a = tableauDecroissant(max)
+    elif int(sys.argv[2]) == 3:
+        a = TableauCroissantSaufDernier(max)
+    else:
+        print("Erreur")
+    print(a)
     triFusion(a, max)
     print(a)
 
-    # Arrêter le chronomètre
-    fin = time.time()
-    # Calculer et afficher la durée
-    duree = fin - debut
-    print(f"Temps écoulé: {duree} secondes")
+    
+
 

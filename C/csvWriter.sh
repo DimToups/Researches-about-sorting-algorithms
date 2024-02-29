@@ -21,7 +21,6 @@ do
         s) scriptR=${OPTARG};;
     esac
 done
-echo $scriptR
 
 fichier='./out/'$nomFichier'.csv'
 

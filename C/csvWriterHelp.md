@@ -28,3 +28,5 @@ Le type de script R à exécuter à la fin du programme pour générer un graphi
 - **n** : script convertissant simplement le résultat du programme en un graphique pdf du même nom que le fichier de sortie csv. Option par défaut.
 - **l** : script convertissant le résultat du programme en un graphique pdf avec une échelle logarithmique pour pouvoir mieux comparer l'évolution des diférentsalgorithmes de tri.
 - **o** : option permettant de ne pas créer de graphique de sortie.
+### -o
+Option permettant de continuer à remplir le fichier cible.

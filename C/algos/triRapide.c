@@ -1,83 +1,49 @@
-#include <stdlib.h>
+#include "../lib/triRapide.c"
+#include "../lib/arrayManager.c"
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-#include <stdbool.h>
+#include <string.h>
 
-void triRapide(int *A, int n);
+int main(int argc, char** argv) {
+    if(argc < 3){
+        printf("Usage : %s <nbVal> <valMax>\n\tOptions : -r : a; i; d\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+    int nbVal = atoi(argv[1]);
+    int *a= malloc(nbVal * sizeof(int));
+    int remplissage = 0;
+    int decalage = 0;
+    if(argc > 5 && strcmp(argv[3], "-r") == 0){
+        if(strcmp(argv[4], "a") == 0)
+            remplissage = 0;
+        else if(strcmp(argv[4], "i") == 0)
+            remplissage = 1;
+        else if(strcmp(argv[4], "d") == 0){
+            remplissage = 2;
+            if(atoi(argv[5]) != 0)
+                decalage = atoi(argv[5]);
+            else{
+                printf("Le décalage n'est pas valide");
+                free(a);
+                return EXIT_FAILURE;
+            }
+        }
+        else
+            remplissage = 0;
+    }
+    else
+        remplissage = 0;
 
-void sousTriRapide(int *A, int p, int r);
-
-int partition(int *A, int p, int r);
-
-bool estTrie(int *A);
-
-int main(int argc, char** argv){
-    // Vérification de la conformité des arguments
-    if(argc != 2){
-	printf("Usage : %s <arraySize>\n", argv[0]);
-	return EXIT_FAILURE;
+    switch (remplissage) {
+        case 0 : remplissageAleatoire(a, nbVal, atoi(argv[2])); break;
+        case 1 : remplissageIncremental(a, nbVal);  break;
+        case 2 : remplissageIncrementalDecale(a, nbVal, decalage); break;
+        default : remplissageAleatoire(a, nbVal, atoi(argv[2])); break;
     }
 
-    int n = atoi(argv[1]);
-    int* A = malloc(n * sizeof(int));
+    triRapide(a, nbVal);
 
-    // Remplissage du tableau
-    srand(time(NULL));
-    for (int i = 0; i < n; i++)
-	A[i] = rand() % 101;
-
-    // Lancement du chronomètre
-    clock_t t1;
-    t1 = clock();
-
-    // Lancement du tri
-    triRapide(A, n);
-
-    // Arrêt du chronomètre
-    t1 = clock();
-
-    // Affichage du tableau
-    printf("n = %d\n", n);
-    for(int i = 0; i < n; i++){
-	if(i % 10 == 0)
-	    printf("\n[%d] |", i);
-	printf(" %d |", A[i]);
-    }
-    printf("\n");
-    printf("Le programme a duré %lf secondes\n", (double)t1 / (double)CLOCKS_PER_SEC);
-
-    free(A);
-    
-    return EXIT_SUCCESS;
+    free(a);
 }
-
-void triRapide(int* A, int n){
-    sousTriRapide(A, 0, n);
-}
-
-void sousTriRapide(int* A, int p, int r){
-    if(p < r - 1){
-	int q = partition(A, p, r);
-	sousTriRapide(A, p, q);
-	sousTriRapide(A, q + 1, r);
-    }
-}
-
-int partition(int* A, int p, int r){
-    int pivot = A[r - 1];
-    int i = p;
-    for(int j = p; j < r - 1; j++){
-	if(A[j] <= pivot){
-	    int v = A[i];
-	    A[i] = A[j];
-	    A[j] = v;
-	    i++;
-	}
-    }
-    int v = A[i];
-    A[i] = A[r - 1];
-    A[r - 1] = v;
-
-    return i;
-}
-

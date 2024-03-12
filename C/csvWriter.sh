@@ -41,19 +41,40 @@ rapide(){
     echo "rapide,$2,$res" 1>> $5
 }
 
+fusionInsertion(){
+    if [ $1 == 'd' ]
+    then
+        res=`(/usr/bin/time -f "%U"  bin/triFusionInsertion $2 $3 $6 -r $1 $4 > /dev/null ) 2>&1`
+    else
+        res=`(/usr/bin/time -f "%U"  bin/triFusionInsertion $2 $3 $6 -r $4 > /dev/null ) 2>&1`
+    fi
+    echo "fusion avec insertion,$2,$res" 1>> $5
+}
 
-algo='ifr'
+rapideInsertion(){
+    if [ $1 == 'd' ]
+    then
+        res=`(/usr/bin/time -f "%U"  bin/triRapideInsertion $2 $3 $6 -r $1 $4 > /dev/null ) 2>&1`
+    else
+        res=`(/usr/bin/time -f "%U"  bin/triRapideInsertion $2 $3 $6 -r $4 > /dev/null ) 2>&1`
+    fi
+    echo "rapide avec insertion,$2,$res" 1>> $5
+}
+
+
+algo='ifrFR'
 min=10000
 max=50000
 pas=1000
 remplissage='a'
 decalage=1
+seuil=10
 nomFichier='donnees'
 scriptR='n'
 override=true
 
 # Gestion des arguments
-while getopts ":a:m:M:p:r:n:s:o:" flag
+while getopts ":a:m:M:p:r:n:s:o:S:" flag
 do
     case "${flag}" in
         a) algo=${OPTARG};;
@@ -63,6 +84,7 @@ do
         r) remplissage=${OPTARG};;
         n) nomFichier=${OPTARG};;
         s) scriptR=${OPTARG};;
+        S) seuil=${OPTARG};;
     esac
 done
 while [ $# -gt 0 ]; do
@@ -71,6 +93,8 @@ while [ $# -gt 0 ]; do
     esac
     shift
 done
+
+echo $seuil
 
 # Gestion du fichier
 fichier='./out/'$nomFichier'.csv'
@@ -93,6 +117,14 @@ do
     if [[ $algo == *"r"* ]]
     then
         rapide $remplissage $taille $max $decalage $fichier
+    fi
+    if [[ $algo == *"F"* ]]
+    then
+        fusionInsertion $remplissage $taille $max $decalage $fichier $seuil
+    fi
+    if [[ $algo == *"R"* ]]
+    then
+        rapideInsertion $remplissage $taille $max $decalage $fichier $seuil
     fi
 
     taille=$(expr $taille + $pas)

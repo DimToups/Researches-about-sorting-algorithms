@@ -10,6 +10,7 @@ Le type d'algorithme à exécuter. Quatre options supplémentaires sont possible
 - **f** : tri par fusion
 - **r** : tri rapide
 - **F** : tri par fusion avec une injection de tri par insertion
+- **R** : tri rapide avec une injection de tri par insertion
 ### -m [taille]
 La taille minimale du tableau à trier, la taille est de 10000 par défaut. La taille doit être inférieure à la taille maximale.
 ### -M [taille]

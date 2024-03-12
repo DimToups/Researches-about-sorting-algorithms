@@ -41,8 +41,28 @@ rapide(){
     echo "rapide,$2,$res" 1>> $5
 }
 
+fusionInsertion(){
+    if [ $1 == 'd' ]
+    then
+        res=`(/usr/bin/time -f "%U"  bin/triFusionInsertion $2 $3 -r $1 $4 > /dev/null ) 2>&1`
+    else
+        res=`(/usr/bin/time -f "%U"  bin/triFusionInsertion $2 $3 -r $4 > /dev/null ) 2>&1`
+    fi
+    echo "fusion avec insertion,$2,$res" 1>> $5
+}
 
-algo='ifr'
+rapideInsertion(){
+    if [ $1 == 'd' ]
+    then
+        res=`(/usr/bin/time -f "%U"  bin/triRapideInsertion $2 $3 -r $1 $4 > /dev/null ) 2>&1`
+    else
+        res=`(/usr/bin/time -f "%U"  bin/triRapideInsertion $2 $3 -r $4 > /dev/null ) 2>&1`
+    fi
+    echo "rapide avec insertion,$2,$res" 1>> $5
+}
+
+
+algo='ifrFR'
 min=10000
 max=50000
 pas=1000
@@ -93,6 +113,14 @@ do
     if [[ $algo == *"r"* ]]
     then
         rapide $remplissage $taille $max $decalage $fichier
+    fi
+    if [[ $algo == *"F"* ]]
+    then
+        fusionInsertion $remplissage $taille $max $decalage $fichier
+    fi
+    if [[ $algo == *"R"* ]]
+    then
+        rapideInsertion $remplissage $taille $max $decalage $fichier
     fi
 
     taille=$(expr $taille + $pas)

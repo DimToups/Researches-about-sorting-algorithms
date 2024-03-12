@@ -6,7 +6,7 @@ if(length(args) != 1){
     stop("Usage : script.R [fichier]")
 }
 srcFile <- paste("./out/", args[1], ".csv", sep = "")
-outputFile <- paste("./out/", args[1], ".pdf", sep = "")
+outputFile <- paste("./out/", args[1], "_normal.pdf", sep = "")
 
 # Importation de la librairie ggplot2 pour générer le graphe
 library(ggplot2)
